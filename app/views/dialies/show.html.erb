@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @dialy.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @dialy.body %>
+</p>
+
+<%= link_to 'Edit', edit_dialy_path(@dialy) %> |
+<%= link_to 'Back', dialies_path %>

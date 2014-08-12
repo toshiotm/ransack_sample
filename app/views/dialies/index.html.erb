@@ -1,0 +1,29 @@
+<h1>Listing dialies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <%= content_tag :th, sort_link(@q, :title) %>
+      <th>Body</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dialies.each do |dialy| %>
+      <tr>
+        <td><%= dialy.id %></td>
+        <td><%= dialy.title %></td>
+        <td><%= dialy.body %></td>
+        <td><%= link_to 'Show', dialy %></td>
+        <td><%= link_to 'Edit', edit_dialy_path(dialy) %></td>
+        <td><%= link_to 'Destroy', dialy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Dialy', new_dialy_path %>
