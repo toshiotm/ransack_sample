@@ -5,8 +5,8 @@ class DialiesController < ApplicationController
   # GET /dialies.json
   def index
     # 第２ソート順にbodyの昇順を設定
-    # search_params = params[:q]
-    # search_params[:s] = [search_params[:s], "body asc"] unless search_params.nil?
+    search_params = params[:q]
+    search_params[:s] = [search_params[:s], "body asc"] unless (search_params.nil? || search_params[:s].nil?)
 
     @q = Dialy.search(params[:q])
     @dialies = @q.result(distinct: true)
